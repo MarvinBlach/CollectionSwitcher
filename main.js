@@ -31,6 +31,12 @@ allElements.forEach(element => {
         return; // Skip other checks for this iteration
     }
 
+    // For any position other than last, if the element has hs-last attribute, hide it
+    if (element.hasAttribute('hs-last')) {
+        element.style.display = 'none';
+        return; // Skip other checks for this iteration
+    }
+
     if (element.hasAttribute('hs-even') && (index + 1) % 2 !== 0) {
         element.style.display = 'none';
     }
